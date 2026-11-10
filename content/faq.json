@@ -1,0 +1,30 @@
+{
+  "mostrar": true,
+  "titulo": "Perguntas *frequentes*",
+  "perguntas": [
+    {
+      "pergunta": "Como sei se preciso de terapia?",
+      "resposta": "Não existe um momento “certo” ou um problema grande o bastante. Se algo tem pesado no seu dia a dia, se você sente que está repetindo padrões ou apenas deseja se conhecer melhor, já é um bom motivo para conversar. A primeira sessão também serve para avaliarmos juntos se este é o caminho para você."
+    },
+    {
+      "pergunta": "Como é a primeira sessão?",
+      "resposta": "É um encontro para nos conhecermos. Você conta o que te trouxe, no seu ritmo — não há resposta certa nem roteiro a seguir. Eu explico como o trabalho funciona, e combinamos juntos os próximos passos."
+    },
+    {
+      "pergunta": "Quanto tempo dura a terapia?",
+      "resposta": "Depende de cada pessoa e do que ela busca, por isso não trabalho com prazos fixos. Ao longo do processo, avaliamos juntos como as coisas estão caminhando, e você tem total liberdade para decidir quando encerrar."
+    },
+    {
+      "pergunta": "O atendimento on-line funciona da mesma forma?",
+      "resposta": "Sim. O atendimento on-line é regulamentado pelo Conselho Federal de Psicologia e segue os mesmos princípios éticos e de sigilo do presencial. O que muda é o cuidado com o ambiente: é importante estar em um lugar reservado, com fone de ouvido e conexão estável."
+    },
+    {
+      "pergunta": "Qual é o valor das sessões? Você atende convênio?",
+      "resposta": "Os valores são informados no primeiro contato, junto com as formas de pagamento. O atendimento é particular, com emissão de recibo para você pedir reembolso ao plano de saúde, quando o plano permitir."
+    },
+    {
+      "pergunta": "O que eu falar fica entre nós?",
+      "resposta": "Sim. O sigilo é um dever ético da psicóloga, previsto no Código de Ética Profissional. O que é dito em sessão é protegido, com exceções apenas nas situações excepcionais que a própria legislação e o Código preveem — e que podemos conversar com transparência sempre que você quiser."
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "titulo": "Do primeiro contato às *sessões*",
+  "intro": "Começar terapia costuma trazer dúvidas. Este é o caminho, passo a passo — sem compromisso até você decidir seguir.",
+  "passos": [
+    {
+      "titulo": "Você entra em contato",
+      "texto": "Pelo WhatsApp ou pelo formulário deste site. Não é preciso explicar tudo — uma mensagem curta já basta."
+    },
+    {
+      "titulo": "Combinamos os detalhes",
+      "texto": "Conversamos sobre horários, formato (on-line ou presencial) e valores. Você pode tirar todas as dúvidas antes de decidir."
+    },
+    {
+      "titulo": "A primeira sessão",
+      "texto": "Um encontro para nos conhecermos: você conta o que te trouxe, do jeito que conseguir, e eu explico como o trabalho acontece."
+    },
+    {
+      "titulo": "O processo terapêutico",
+      "texto": "Seguimos com sessões regulares. Ao longo do caminho, revisitamos juntos o que está fazendo sentido — e você tem liberdade para encerrar quando quiser."
+    }
+  ]
+}

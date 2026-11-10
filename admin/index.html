@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow">
+  <!-- Arquivo GERADO por scripts/build.mjs -->
+  <title>Painel — Jaqueline Gonçalves</title>
+  <link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..500&family=Instrument+Sans:wght@400..600&display=swap">
+  <!-- Tema do painel nas cores da marca (seletores pelos nomes de componentes do Decap) -->
+  <style>
+    :root { --pine:#4A0E2F; --clay:#A8125A; --linen:#F8F2EF; --paper:#FDF9F8; --ink:#2B1621; --muted:#6A5260; --line:#ECD8E0; }
+    body, button, input, textarea, select { font-family: "Instrument Sans", system-ui, sans-serif !important; }
+    body { background: var(--linen) !important; color: var(--ink); }
+    [class*="-AppHeader-css"], [class*="-AppHeader "] { border-bottom: 3px solid var(--clay) !important; }
+    [class*="-cardTopHeading"], [class*="-ListCardTitle"], [class*="-SidebarHeading"] {
+      font-family: "Fraunces", Georgia, serif !important; font-weight: 450 !important; letter-spacing: -.01em; color: var(--ink) !important;
+    }
+    [class*="-cardTopDescription"] { color: var(--muted) !important; line-height: 1.6 !important; }
+    [class*="-SidebarContainer-card"], [class*="-CollectionTopContainer-card"], [class*="-ListCard-card"] {
+      border-radius: 14px !important; box-shadow: 0 1px 2px rgba(74,14,47,.06), 0 6px 18px -10px rgba(74,14,47,.25) !important;
+    }
+    [class*="-ListCard-card"] { border: 1px solid var(--line) !important; transition: transform .2s, box-shadow .2s; }
+    [class*="-ListCard-card"]:hover { transform: translateY(-2px); }
+    [class*="-sidebarNavLinkActive"] { color: var(--clay) !important; border-left-color: var(--clay) !important; }
+    [class*="-EditorContainer"], [class*="-ControlPaneContainer"], [class*="-NoPreviewContainer"], [class*="-Editor-"] { background: var(--linen) !important; }
+    [class*="-TopBarContainer"] { background: #F3E4EA !important; border-radius: 0 10px 0 0 !important; }
+    [class*="-ControlPaneContainer"] { max-width: 820px !important; margin: 0 auto !important; padding-top: 28px !important; }
+    [class*="-FieldLabel"] {
+      background: var(--pine) !important; color: #FBEFF4 !important; border-color: var(--pine) !important;
+      text-transform: none !important; font-size: 13px !important; font-weight: 600 !important; letter-spacing: .02em !important;
+      border-radius: 8px 8px 0 0 !important; padding: 5px 12px !important;
+    }
+    [class*="-ControlContainer"]:focus-within > [class*="-FieldLabel"],
+    [class*="-ControlContainer"]:focus-within > [class*="-ControlTopbar"] [class*="-FieldLabel"] { background: var(--clay) !important; border-color: var(--clay) !important; }
+    [class*="-ControlContainer"] input[type="text"], [class*="-ControlContainer"] textarea, [class*="-TextControl"], [class*="-StringControl"] {
+      border-color: var(--line) !important; border-radius: 0 10px 10px 10px !important; background: #fff !important; font-size: 15px !important;
+    }
+    [class*="-ControlContainer"]:focus-within input[type="text"], [class*="-ControlContainer"]:focus-within textarea { border-color: var(--clay) !important; }
+    [class*="-ControlHint"] { color: var(--muted) !important; font-size: 13px !important; line-height: 1.5 !important; margin-top: 6px !important; }
+    [class*="-ControlHint"] code { background: #F3E4EA; padding: 1px 6px; border-radius: 4px; color: var(--ink); font-size: 12.5px; }
+    [class*="-ToolbarContainer"] { border-bottom: 1px solid var(--line) !important; }
+  </style>
+  <!-- Login por e-mail e senha (Netlify Identity) -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+</head>
+<body>
+  <!-- Decap CMS: painel de edição do conteúdo (configuração em admin/config.yml) -->
+  <script src="https://unpkg.com/decap-cms@3.17.3/dist/decap-cms.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "config": {
+    "modoApresentacao": true,
+    "dominio": "https://www.seudominio.com.br",
+    "seoTitulo": "",
+    "seoDescricao": "",
+    "favicon": ""
+  },
+  "profissional": {
+    "nome": "Jaqueline Gonçalves",
+    "titulo": "Psicóloga clínica",
+    "crp": "03/31077",
+    "cidade": "",
+    "iniciais": "JG"
+  },
+  "contato": {
+    "whatsapp": "(75) 99923-2080",
+    "whatsappExibicao": "(75) 99923-2080",
+    "whatsappMensagem": "Olá! Encontrei seu site e gostaria de saber mais sobre o atendimento.",
+    "email": "",
+    "instagram": "psijaquelinegoncalves",
+    "endereco": "",
+    "horarios": "",
+    "prazoResposta": "",
+    "formEndpoint": ""
+  }
+}

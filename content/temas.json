@@ -1,0 +1,32 @@
+{
+  "mostrar": true,
+  "titulo": "O que costuma *chegar* ao consultório",
+  "intro": "Você não precisa saber nomear o que sente para procurar terapia. Estes são alguns dos temas que acompanho com frequência.",
+  "nota": "Lista de exemplo — revise com os temas que você realmente acompanha.",
+  "itens": [
+    {
+      "titulo": "Ansiedade e preocupação constante",
+      "texto": "Quando a mente não desliga e o corpo sente junto."
+    },
+    {
+      "titulo": "Momentos de transição",
+      "texto": "Mudanças de carreira, cidade, relações ou fases da vida."
+    },
+    {
+      "titulo": "Luto e perdas",
+      "texto": "De pessoas, de vínculos, de planos que não aconteceram."
+    },
+    {
+      "titulo": "Autoestima e autocobrança",
+      "texto": "A sensação de nunca ser suficiente, por mais que se faça."
+    },
+    {
+      "titulo": "Relações e vínculos",
+      "texto": "Família, amizades, relacionamentos amorosos e limites."
+    },
+    {
+      "titulo": "Trabalho e esgotamento",
+      "texto": "Rotinas que pesam, cansaço persistente e perda de sentido."
+    }
+  ]
+}

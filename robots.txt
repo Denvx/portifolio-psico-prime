@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /
+Disallow: /admin/
+
+Sitemap: https://www.seudominio.com.br/sitemap.xml

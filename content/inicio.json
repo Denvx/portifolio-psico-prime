@@ -1,0 +1,26 @@
+{
+  "eyebrow": "Psicóloga clínica · on-line e presencial",
+  "titulo": "Algumas coisas\npedem mais do que\nconselho. Pedem *escuta.*",
+  "texto": "Sou **Jaqueline Gonçalves**, psicóloga clínica. Acompanho pessoas em psicoterapia individual — on-line ou presencialmente — com um trabalho cuidadoso, ético e no ritmo de cada um.",
+  "botao": "Agendar uma conversa",
+  "foto": "assets/img/uploads/jaqueline-retrato.jpg",
+  "fotoAlt": "Jaqueline Gonçalves sorrindo, de blazer branco, em seu espaço de atendimento",
+  "resumo": [
+    {
+      "rotulo": "Para quem",
+      "valor": "Adultos, a partir de 18 anos"
+    },
+    {
+      "rotulo": "Formato",
+      "valor": "Psicoterapia individual"
+    },
+    {
+      "rotulo": "Onde",
+      "valor": "On-line e presencial"
+    },
+    {
+      "rotulo": "Abordagem",
+      "valor": ""
+    }
+  ]
+}

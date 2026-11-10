@@ -1,0 +1,27 @@
+{
+  "mostrar": true,
+  "titulo": "Trajetória e *registro*",
+  "intro": "Todas as informações profissionais podem ser verificadas nos canais oficiais do Conselho Federal de Psicologia.",
+  "itens": [
+    {
+      "ano": "",
+      "titulo": "Graduação em Psicologia",
+      "local": ""
+    },
+    {
+      "ano": "",
+      "titulo": "Especialização ou pós-graduação (escreva a área)",
+      "local": ""
+    },
+    {
+      "ano": "",
+      "titulo": "Formação complementar (escreva qual)",
+      "local": ""
+    },
+    {
+      "ano": "",
+      "titulo": "Atuação na Assistência Social — SUAS / CREAS",
+      "local": ""
+    }
+  ]
+}

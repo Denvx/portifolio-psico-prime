@@ -1,0 +1,38 @@
+# Configuração da Netlify (hospedagem)
+# A cada alteração salva pelo painel /admin, a Netlify roda o build
+# e publica o site atualizado.
+
+[build]
+  command = "node scripts/build.mjs"
+  publish = "."
+
+[build.environment]
+  NODE_VERSION = "22"
+
+# Segurança básica
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    X-Frame-Options = "SAMEORIGIN"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
+
+# Não expor arquivos internos do projeto
+[[redirects]]
+  from = "/scripts/*"
+  to = "/404"
+  status = 404
+  force = true
+
+[[redirects]]
+  from = "/docs/*"
+  to = "/404"
+  status = 404
+  force = true
+
+# Cache longo para fotos e fontes; HTML sempre atualizado
+[[headers]]
+  for = "/assets/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=2592000"

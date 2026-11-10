@@ -1,0 +1,28 @@
+{
+  "titulo": "Como eu *trabalho*",
+  "intro": "Minha prática é orientada pela minha abordagem clínica (escreva aqui qual é — por exemplo, Terapia Cognitivo-Comportamental ou Psicanálise). Sem jargão, isso quer dizer três coisas:",
+  "pilares": [
+    {
+      "titulo": "Escuta antes de técnica",
+      "texto": "Cada pessoa chega com uma história. Antes de qualquer intervenção, procuro entender a sua — como você vive, sente e se relaciona com o que acontece."
+    },
+    {
+      "titulo": "Um trabalho feito em conjunto",
+      "texto": "Os objetivos da terapia são construídos com você, revisitados ao longo do caminho e ajustados sempre que fizer sentido."
+    },
+    {
+      "titulo": "Ciência e ética",
+      "texto": "Utilizo métodos reconhecidos pela Psicologia e sigo o Código de Ética Profissional, com sigilo em todas as etapas do atendimento."
+    }
+  ],
+  "terapiaE": [
+    "Um espaço reservado e sigiloso para falar de si.",
+    "Um processo em parceria, com ritmo próprio.",
+    "Uma oportunidade de entender padrões e possibilidades."
+  ],
+  "terapiaNaoE": [
+    "Conselho pronto ou receita de como viver.",
+    "Um lugar de julgamento.",
+    "Uma fórmula com prazo ou resultado garantido."
+  ]
+}

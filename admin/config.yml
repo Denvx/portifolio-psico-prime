@@ -1,0 +1,275 @@
+# ===================================================================
+#  Painel de administração (Decap CMS)
+#  Cada tela edita um arquivo em /content. Ao publicar, a Netlify
+#  roda `node scripts/build.mjs` e o site é atualizado em ~1 minuto.
+#
+#  Regras para a profissional (sem sintaxe técnica):
+#  - Campo vazio = o site mostra um aviso "provisório" enquanto o
+#    modo apresentação estiver ligado; com o site no ar, o item some.
+#  - Textos de exemplo (scripts/exemplos.json) aparecem marcados como
+#    provisórios até serem reescritos.
+# ===================================================================
+
+backend:
+  name: git-gateway          # login por e-mail/senha (Netlify Identity)
+  branch: main
+  commit_messages:
+    update: "Painel: atualiza {{slug}}"
+    uploadMedia: "Painel: envia foto {{path}}"
+    deleteMedia: "Painel: remove foto {{path}}"
+
+# Permite editar localmente com `npx decap-server` (não afeta o site publicado)
+local_backend: true
+
+locale: pt
+publish_mode: simple
+site_url: https://www.seudominio.com.br
+display_url: https://www.seudominio.com.br
+logo_url: /assets/img/favicon.svg
+
+media_folder: assets/img/uploads
+public_folder: assets/img/uploads
+
+slug:
+  encoding: ascii
+  clean_accents: true
+
+collections:
+  - name: site
+    label: "Meu site"
+    description: "Escolha a parte do site que deseja alterar. Depois de editar, clique em “Publicar” e depois em “Publicar agora”. O site atualiza em cerca de 1 minuto."
+    editor: { preview: false }
+    delete: false
+    files:
+
+      # ---------------------------------------------------------------
+      - name: geral
+        label: "Meus dados e contato"
+        file: content/geral.json
+        format: json
+        fields:
+          - label: "Meus dados"
+            name: profissional
+            widget: object
+            collapsed: false
+            fields:
+              - { label: "Nome profissional", name: nome, widget: string, hint: "Como você quer ser apresentada. Ex.: Ana Lima" }
+              - { label: "Título", name: titulo, widget: string, hint: "Ex.: Psicóloga clínica" }
+              - { label: "Número do CRP", name: crp, widget: string, hint: "Só o número, com a região. Ex.: 06/123456. É obrigatório em toda divulgação profissional." }
+              - { label: "Cidade", name: cidade, widget: string, required: false, hint: "Ex.: Petrópolis/RJ" }
+              - { label: "Iniciais para o logotipo", name: iniciais, widget: string, required: false, pattern: ['^.{0,3}$', "Use no máximo 3 letras"], hint: "Deixe em branco para usar as iniciais do seu nome automaticamente." }
+
+          - label: "Contato"
+            name: contato
+            widget: object
+            collapsed: false
+            fields:
+              - { label: "WhatsApp", name: whatsapp, widget: string, required: false, pattern: ['^[\d\s()+-]*$', "Use apenas números"], hint: "Com DDD. Ex.: 21 99999-8888 (pode digitar do jeito que preferir)." }
+              - { label: "WhatsApp — como aparece escrito no site", name: whatsappExibicao, widget: string, required: false, hint: "Ex.: (21) 99999-8888" }
+              - { label: "Mensagem que já vem escrita no WhatsApp", name: whatsappMensagem, widget: text, required: false, hint: "Quando alguém clica para falar com você, o WhatsApp já abre com este texto." }
+              - { label: "E-mail", name: email, widget: string, required: false, pattern: ['^([^@\s]+@[^@\s]+\.[^@\s]+)?$', "Confira o e-mail"], hint: "Ex.: contato@anapsicologa.com.br" }
+              - { label: "Instagram", name: instagram, widget: string, required: false, hint: "Só o nome de usuário. Ex.: anapsicologa" }
+              - { label: "Endereço do consultório", name: endereco, widget: string, required: false, hint: "Ex.: Rua das Flores, 120, sala 3 — Centro, Petrópolis/RJ. Deixe em branco se atender só on-line." }
+              - { label: "Dias e horários", name: horarios, widget: string, required: false, hint: "Ex.: Segunda a sexta, das 8h às 20h" }
+              - { label: "Prazo para responder mensagens", name: prazoResposta, widget: string, required: false, hint: "Ex.: 1 dia útil" }
+
+          - label: "Publicação e Google"
+            name: config
+            widget: object
+            collapsed: true
+            summary: "Modo apresentação, endereço do site e aparência no Google"
+            fields:
+              - label: "Modo apresentação (rascunho)"
+                name: modoApresentacao
+                widget: boolean
+                default: true
+                hint: "**Ligado:** o site mostra uma faixa de rascunho, destaca o que ainda falta preencher e fica fora do Google. **Desligue quando tudo estiver pronto** para o site ir ao ar de verdade."
+              - { label: "Endereço do site", name: dominio, widget: string, hint: "Ex.: https://www.anapsicologa.com.br" }
+              - { label: "Título da aba e do Google", name: seoTitulo, widget: string, required: false, hint: "Pode deixar em branco: o título é criado automaticamente com seu nome." }
+              - { label: "Descrição no Google", name: seoDescricao, widget: text, required: false, hint: "Pode deixar em branco: a descrição é criada automaticamente com seu nome, CRP e cidade." }
+              - { label: "Ícone da aba do navegador", name: favicon, widget: image, required: false, choose_url: false, hint: "Pode deixar em branco: o site usa um círculo com suas iniciais. Se tiver um logotipo, envie uma imagem quadrada (PNG)." }
+              - { label: "Envio do formulário (uso técnico)", name: formEndpoint, widget: string, required: false, hint: "Deixe em branco. Assim, as mensagens do formulário chegam pelo seu WhatsApp." }
+
+      # ---------------------------------------------------------------
+      - name: inicio
+        label: "Início — primeira tela"
+        file: content/inicio.json
+        format: json
+        fields:
+          - { label: "Frase pequena acima do título", name: eyebrow, widget: string }
+          - { label: "Título principal", name: titulo, widget: text, hint: "Cada linha que você escrever vira uma linha no site. Para destacar uma palavra em itálico colorido, coloque-a entre asteriscos: `Pedem *escuta.*`" }
+          - { label: "Texto de apresentação", name: texto, widget: text, hint: "Para deixar algo em negrito, use dois asteriscos: `**seu nome**`" }
+          - { label: "Texto do botão", name: botao, widget: string }
+          - { label: "Sua foto principal", name: foto, widget: image, required: false, choose_url: false, hint: "Foto vertical, de boa qualidade (JPG). Enquanto estiver vazia, o site mostra um espaço reservado." }
+          - { label: "Descreva a foto", name: fotoAlt, widget: string, required: false, hint: "Para pessoas com deficiência visual. Ex.: Ana sorrindo, sentada em uma poltrona do consultório." }
+          - label: "Faixa de resumo"
+            name: resumo
+            widget: list
+            max: 4
+            summary: "{{fields.rotulo}}: {{fields.valor}}"
+            hint: "Os quatro itens que aparecem lado a lado no fim da primeira tela."
+            fields:
+              - { label: "Título do item", name: rotulo, widget: string }
+              - { label: "Informação", name: valor, widget: string, required: false }
+
+      # ---------------------------------------------------------------
+      - name: apresentacao
+        label: "Apresentação"
+        file: content/apresentacao.json
+        format: json
+        fields:
+          - { label: "Frase de destaque", name: frase, widget: text, hint: "Aparece grande, em fundo verde. O trecho entre asteriscos fica em itálico colorido." }
+          - { label: "Parágrafos", name: paragrafos, widget: list, field: { label: "Parágrafo", name: p, widget: text } }
+          - { label: "Nota ao lado", name: nota, widget: string, required: false }
+
+      # ---------------------------------------------------------------
+      - name: sobre
+        label: "Sobre mim"
+        file: content/sobre.json
+        format: json
+        fields:
+          - { label: "Título", name: titulo, widget: string, hint: "Ex.: `Prazer, eu sou *Ana.*` (o nome entre asteriscos fica em itálico colorido)" }
+          - { label: "Seu texto", name: paragrafos, widget: list, hint: "Cada item é um parágrafo. Clique no item para editar.", field: { label: "Parágrafo", name: p, widget: text } }
+          - { label: "Uma frase sua, em destaque", name: citacao, widget: text, required: false }
+          - { label: "Foto em ambiente", name: foto, widget: image, required: false, choose_url: false, hint: "Foto vertical, de preferência no consultório ou com luz natural." }
+          - { label: "Descreva a foto", name: fotoAlt, widget: string, required: false }
+          - { label: "Foto de um detalhe do consultório", name: fotoDetalhe, widget: image, required: false, choose_url: false, hint: "Foto quadrada: uma poltrona, livros, a luz da janela…" }
+          - { label: "Descreva a foto de detalhe", name: fotoDetalheAlt, widget: string, required: false }
+          - label: "Resumo rápido"
+            name: ficha
+            widget: list
+            summary: "{{fields.rotulo}}: {{fields.valor}}"
+            hint: "Seu CRP entra automaticamente no fim desta lista."
+            fields:
+              - { label: "Título do item", name: rotulo, widget: string }
+              - { label: "Informação", name: valor, widget: string, required: false }
+
+      # ---------------------------------------------------------------
+      - name: abordagem
+        label: "Como eu trabalho"
+        file: content/abordagem.json
+        format: json
+        fields:
+          - { label: "Título", name: titulo, widget: string }
+          - { label: "Introdução", name: intro, widget: text }
+          - label: "Princípios"
+            name: pilares
+            widget: list
+            max: 6
+            summary: "{{fields.titulo}}"
+            fields:
+              - { label: "Título", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+          - { label: "A terapia é…", name: terapiaE, widget: list, field: { label: "Frase", name: item, widget: string } }
+          - { label: "A terapia não é…", name: terapiaNaoE, widget: list, field: { label: "Frase", name: item, widget: string } }
+
+      # ---------------------------------------------------------------
+      - name: temas
+        label: "Temas que acompanho"
+        file: content/temas.json
+        format: json
+        fields:
+          - { label: "Mostrar esta parte no site", name: mostrar, widget: boolean, default: true }
+          - { label: "Título", name: titulo, widget: string }
+          - { label: "Introdução", name: intro, widget: text }
+          - { label: "Observação", name: nota, widget: string, required: false, hint: "Pode apagar depois de revisar a lista." }
+          - label: "Temas"
+            name: itens
+            widget: list
+            summary: "{{fields.titulo}}"
+            fields:
+              - { label: "Tema", name: titulo, widget: string }
+              - { label: "Descrição curta", name: texto, widget: string }
+
+      # ---------------------------------------------------------------
+      - name: atendimento
+        label: "Atendimento"
+        file: content/atendimento.json
+        format: json
+        fields:
+          - { label: "Título", name: titulo, widget: string }
+          - { label: "Introdução", name: intro, widget: text }
+          - label: "On-line"
+            name: online
+            widget: object
+            fields:
+              - { label: "Ofereço atendimento on-line", name: mostrar, widget: boolean, default: true }
+              - { label: "Texto", name: texto, widget: text }
+              - { label: "Detalhes", name: detalhes, widget: list, field: { label: "Detalhe", name: d, widget: string } }
+          - label: "Presencial"
+            name: presencial
+            widget: object
+            fields:
+              - { label: "Ofereço atendimento presencial", name: mostrar, widget: boolean, default: true }
+              - { label: "Texto", name: texto, widget: text }
+              - { label: "Detalhes", name: detalhes, widget: list, field: { label: "Detalhe", name: d, widget: string } }
+          - label: "Informações práticas"
+            name: especificacoes
+            widget: list
+            max: 4
+            summary: "{{fields.rotulo}}: {{fields.valor}}"
+            fields:
+              - { label: "Título do item", name: rotulo, widget: string }
+              - { label: "Informação", name: valor, widget: string, required: false, hint: "Ex.: Sessões de 50 minutos" }
+
+      # ---------------------------------------------------------------
+      - name: processo
+        label: "Como funciona"
+        file: content/processo.json
+        format: json
+        fields:
+          - { label: "Título", name: titulo, widget: string }
+          - { label: "Introdução", name: intro, widget: text }
+          - label: "Passos"
+            name: passos
+            widget: list
+            summary: "{{fields.titulo}}"
+            fields:
+              - { label: "Título do passo", name: titulo, widget: string }
+              - { label: "Texto", name: texto, widget: text }
+
+      # ---------------------------------------------------------------
+      - name: formacao
+        label: "Formação"
+        file: content/formacao.json
+        format: json
+        fields:
+          - { label: "Mostrar esta parte no site", name: mostrar, widget: boolean, default: true }
+          - { label: "Título", name: titulo, widget: string }
+          - { label: "Introdução", name: intro, widget: text }
+          - label: "Minha trajetória"
+            name: itens
+            widget: list
+            summary: "{{fields.ano}} {{fields.titulo}}"
+            hint: "Inclua apenas formações que você possa comprovar (exigência do Código de Ética)."
+            fields:
+              - { label: "Ano", name: ano, widget: string, required: false, hint: "Ex.: 2015 ou 2016–2018" }
+              - { label: "Curso ou experiência", name: titulo, widget: string, hint: "Ex.: Especialização em Terapia Cognitivo-Comportamental" }
+              - { label: "Instituição", name: local, widget: string, required: false, hint: "Ex.: Universidade Federal do Rio de Janeiro" }
+
+      # ---------------------------------------------------------------
+      - name: faq
+        label: "Perguntas frequentes"
+        file: content/faq.json
+        format: json
+        fields:
+          - { label: "Mostrar esta parte no site", name: mostrar, widget: boolean, default: true }
+          - { label: "Título", name: titulo, widget: string }
+          - label: "Perguntas"
+            name: perguntas
+            widget: list
+            summary: "{{fields.pergunta}}"
+            hint: "A pergunta sobre crise e emergência (CVV 188, SAMU 192) aparece sempre no final e não pode ser removida."
+            fields:
+              - { label: "Pergunta", name: pergunta, widget: string }
+              - { label: "Resposta", name: resposta, widget: text }
+
+      # ---------------------------------------------------------------
+      - name: contato
+        label: "Contato e rodapé"
+        file: content/contato.json
+        format: json
+        fields:
+          - { label: "Título da parte de contato", name: titulo, widget: string }
+          - { label: "Texto da parte de contato", name: texto, widget: text }
+          - { label: "Frase no rodapé", name: fraseRodape, widget: string }

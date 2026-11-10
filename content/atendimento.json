@@ -1,0 +1,37 @@
+{
+  "titulo": "Dois caminhos, o mesmo *cuidado*",
+  "intro": "Psicoterapia individual on-line ou presencial. Você escolhe o formato que melhor cabe na sua rotina — e pode mudar ao longo do processo, se precisar.",
+  "online": {
+    "mostrar": true,
+    "texto": "Por videochamada, em plataforma segura, de onde você estiver. Basta uma conexão estável e um lugar reservado para conversar com tranquilidade.",
+    "detalhes": [
+      "Para quem mora em qualquer cidade",
+      "O mesmo sigilo e cuidado de um consultório"
+    ]
+  },
+  "presencial": {
+    "mostrar": true,
+    "texto": "No consultório, em um ambiente silencioso e reservado, pensado para que você se sinta à vontade desde a chegada.",
+    "detalhes": [
+      "Endereço e como chegar (estacionamento, transporte)"
+    ]
+  },
+  "especificacoes": [
+    {
+      "rotulo": "Duração",
+      "valor": "Sessões de 50 minutos"
+    },
+    {
+      "rotulo": "Frequência",
+      "valor": "Combinada em conjunto — em geral, semanal"
+    },
+    {
+      "rotulo": "Público",
+      "valor": "Adultos, a partir de 18 anos"
+    },
+    {
+      "rotulo": "Reembolso",
+      "valor": ""
+    }
+  ]
+}

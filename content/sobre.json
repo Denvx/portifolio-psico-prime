@@ -1,0 +1,27 @@
+{
+  "titulo": "Prazer, eu sou *Jaqueline.*",
+  "paragrafos": [
+    "Conte aqui sua formação, há quanto tempo atua na clínica e um pouco da sua trajetória: onde trabalhou, o que a aproximou da clínica e com quem costuma trabalhar.",
+    "Acredito que cada pessoa carrega uma história que não cabe em rótulos. Por isso, procuro conhecer quem está diante de mim antes de qualquer direção — e construir junto um caminho que respeite o seu jeito de ser e de sentir.",
+    "Além da clínica, realizo palestras e tenho experiência na Assistência Social (SUAS), em trabalho no CREAS — escreva aqui como essa trajetória influencia o seu olhar."
+  ],
+  "citacao": "O acolhimento é transformador.",
+  "foto": "assets/img/uploads/jaqueline-sobre.jpg",
+  "fotoAlt": "Jaqueline Gonçalves sorrindo, segurando uma xícara de café",
+  "fotoDetalhe": "assets/img/uploads/jaqueline-palestra.jpg",
+  "fotoDetalheAlt": "Jaqueline Gonçalves conduzindo uma palestra",
+  "ficha": [
+    {
+      "rotulo": "Formação",
+      "valor": ""
+    },
+    {
+      "rotulo": "Abordagem",
+      "valor": ""
+    },
+    {
+      "rotulo": "Atende",
+      "valor": "On-line e presencial · palestras"
+    }
+  ]
+}
